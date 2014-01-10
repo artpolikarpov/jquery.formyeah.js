@@ -1,8 +1,8 @@
 # jquery.formyeah.js
 
-jQuery plugin for keeping user input. Restores values ​​in fields when page reloads. Uses `localStorage`.
+jQuery plugin for keeping user input. Restores values in fields when page reloads. Uses `localStorage`.
 
-*Disclaimer: I wrote this plugin quickly and then googled it: [Sisyphus.js](http://sisyphus-js.herokuapp.com/). Use the Sisyphus, it should be more reliable. Well, in theory.*
+_**Disclaimer.** I wrote this plugin quickly and then googled this: [Sisyphus.js](http://sisyphus-js.herokuapp.com/). Use Sisyphus, it should be more reliable. Well, in theory._
 
 ## Getting Started
 Download the [production version][min] or the [development version][max].
