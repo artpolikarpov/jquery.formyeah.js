@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>jquery.formyeah Test</title>
+
+  <link rel="stylesheet" href="http://getbootstrap.com/dist/css/bootstrap.min.css"/>
+
+  <script src="../libs/jquery/jquery.js"></script>
+  <script src="../src/jquery.formyeah.js"></script>
+
+  <script type="text/javascript">
+    $(function () {
+      //$('#form-one').sisyphus();
+      $('#form1').formyeah();
+    })
+  </script>
+</head>
+<body style="max-width: 30em; margin: 2em auto;">
+  <form name="mydata" id="form1" method="get" action="?">
+    <div class="form-group">
+      <label for="name" class="control-label">Input Text:</label>
+      <input name="name" value="" id="name" class="form-control"/>
+    </div>
+    <div class="form-group">
+      <label for="story" class="control-label">Textarea:</label>
+      <textarea name="description" cols="50" rows="10" id="story" class="form-control"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="country" class="control-label">Select Dropdown:</label>
+      <select name="country" id="country" class="form-control">
+        <option value="Russia">Russia</option>
+        <option value="USA">USA</option>
+        <option value="England">England</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="planet" class="control-label">Select Multiple:</label>
+      <select name="planet[]" multiple size="5" id="planet" class="form-control">
+        <option value="Mercury">Mercury</option>
+        <option value="Venus">Venus</option>
+        <option value="Earth">Earth</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <div class="checkbox">
+        <label for="single">Checkbox</label>
+        <input type="checkbox" name="single" value="1" id="single" />
+      </div>
+    </div>
+    <div class="form-group">
+      <fieldset>
+        <legend>Checkbox Group:</legend>
+        <div class="checkbox">
+          <input type="checkbox" name="fruit[]" value="Pineapple" id="pineapple" />
+          <label for="pineapple">Pineapple</label>
+        </div>
+        <div class="checkbox">
+          <input type="checkbox" name="fruit[]" value="Orange" id="orange" />
+          <label for="orange">Orange</label>
+        </div>
+        <div class="checkbox">
+          <input type="checkbox" name="fruit[]" value="Peach" id="peach" />
+          <label for="peach">Peach</label>
+        </div>
+      </fieldset>
+    </div>
+    <div class="form-group">
+      <fieldset>
+        <legend>Radio Buttons:</legend>
+        <div class="radio">
+          <input type="radio" name="color" value="Red" id="red" />
+          <label for="red">Red</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="color" value="Green" id="green" />
+          <label for="green">Green</label>
+        </div>
+        <div class="radio">
+          <input type="radio" name="color" value="Blue" id="blue" />
+          <label for="blue">Blue</label>
+        </div>
+      </fieldset>
+    </div>
+    <div class="form-group">
+      <input type="submit" class="btn btn-primary" value="Submit" />
+      <input type="reset" class="btn btn-default" value="Reset" name="reset"/>
+    </div>
+  </form>
+</body>
+</html>
