@@ -7,8 +7,8 @@ jQuery plugin for keeping user input. Restores values ​​in fields when page 
 ## Getting Started
 Download the [production version][min] or the [development version][max].
 
-[min]: https://raw.github.com/artpolikarpov/jquery.formyeah/master/dist/jquery.formyeah.min.js
-[max]: https://raw.github.com/artpolikarpov/jquery.formyeah/master/dist/jquery.formyeah.js
+[min]: https://raw.github.com/artpolikarpov/jquery.formyeah.js/master/dist/jquery.formyeah.min.js
+[max]: https://raw.github.com/artpolikarpov/jquery.formyeah.js/master/dist/jquery.formyeah.js
 
 In your web page:
 
