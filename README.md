@@ -32,7 +32,7 @@ Every input, textarea, or select should have an `id`.
 Passwords fields won’t be stored as well as fields with the `data-recover="false"` attribute.
 
 ## Options
-### emptyStorageOnSubmitAndReset <small>Boolean</small>
+### emptyStorageOnSubmitAndReset
 By default data will be released on the form submission/reset. Change this with `emptyStorageOnSubmitAndReset:false`:
 
 ```javascript
@@ -41,7 +41,7 @@ $('#form1, #form2').formyeah({
 });
 ```
 
-### pageIdentifier <small>String</small>
+### pageIdentifier
 Tells the plugin how to identify the current page. By default it’s a page slug taken from `location` object:
 
 ```javascript
@@ -53,8 +53,12 @@ $('#form1, #form2').formyeah({
 If you want your forms be the same on different pages pass the empty identifier `''`.
 
 ## Methods
-### $('#form1, #form2').formyeah('emptyStorage'[, options])
-Release form data manually.
+### emptyStorage
+Release form data manually:
+
+```javascript
+$('#form1, #form2').formyeah('emptyStorage');
+```
 
 ## Release History
-### 2014-01-11 v0.1.0
+#### 2014-01-11 v0.1.0
