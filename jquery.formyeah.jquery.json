@@ -2,7 +2,7 @@
   "name": "jquery.formyeah",
   "title": "jquery.formyeah",
   "description": "jQuery plugin for keeping user input. Restores values ​​in fields when page reloads. Uses `localStorage`.",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "homepage": "https://github.com/artpolikarpov/jquery.formyeah",
   "author": {
     "name": "Artem Polikarpov",

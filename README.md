@@ -13,37 +13,47 @@ Download the [production version][min] or the [development version][max].
 In your web page:
 
 ```html
+<!-- 1. Link to jQuery (1.9 or later), -->
 <script src="jquery.js"></script>
+<!-- jquery.formyeah.min.js. -->
 <script src="jquery.formyeah.min.js"></script>
-<script>
-  $(function () {
-    $('#form1').formyeah();
-  });
-</script>
 
-<form id="form1" action="?">
+<!-- 2. Add formyeah class to the form. -->
+<form class="formyeah" action="?">
   <input type="text" id="name" name="name" placeholder="Your name" />
   <textarea id="comment" name="comment" cols="30" rows="10" placeholder="Comment"></textarea>
   <label for="subscribe"><input type="checkbox" id="subscribe" name="subscribe" /> Subscribe</label>
   <button>Send</button>
 </form>
+
+<!-- 3. Sing! -->
 ```
 
 Every input, textarea, or select should have an `id`.
 
 Passwords fields won’t be stored as well as fields with the `data-recover="false"` attribute.
 
+Data will be flushed on the form submission/reset.
+
 ## [Simple demo →](http://artpolikarpov.github.io/jquery.formyeah.js/test/jquery.formyeah.html)
 
-## Options
-### emptyStorageOnSubmitAndReset
-By default data will be released on the form submission/reset. Change this with `emptyStorageOnSubmitAndReset:false`:
+## Manual initialization
+In jQuery manner:
+```html
+<script>
+  $(function () {
+    $('#form1').formyeah();
+  });
+</script>
 
-```javascript
-$('#form1, #form2').formyeah({
-  emptyStorageOnSubmitAndReset: false
-});
+<form id="form1">
+  <input type="email" id="email" />
+  <input type="password" id="passdowd" />
+  <button>Log in</button>
+</form>
 ```
+
+## Options
 
 ### pageIdentifier
 Tells the plugin how to identify the current page. By default it’s a page slug taken from `location` object:
@@ -65,4 +75,9 @@ $('#form1, #form2').formyeah('emptyStorage');
 ```
 
 ## Release History
-#### 2014-01-11 v0.1.0
+### 2014-01-11 v0.2.0
+
+* Auto initialization with `formyeah` class.
+* Removed `emptyStorageOnSubmitAndReset` option.
+
+### 2014-01-11 v0.1.0

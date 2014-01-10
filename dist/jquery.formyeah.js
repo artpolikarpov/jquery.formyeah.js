@@ -28,17 +28,17 @@
 
   $.fn.formyeah = function () {
     var action = arguments[0],
-        options = $.extend({
+        _options = $.extend({
           emptyStorageOnSubmitAndReset: true,
           pageIdentifier: [location.pathname, location.search, location.hash].join('')
         }, arguments[1] || typeof action === 'object' && action);
 
     return this.each(function () {
-      var $parent = $(this);
-
-      var fieldSelector = ':input[id]:not([data-recover="false"]):not([type="password"])',
+      var $parent = $(this),
+          fieldSelector = ':input[id]:not([data-recover="false"]):not([type="password"])',
           $fields = $(fieldSelector, $parent),
-          parentData = $parent.data();
+          parentData = $parent.data(),
+          options = $.extend({}, _options, parentData);
 
         if (action === 'emptyStorage') {
           // Empty storage for fields in the selected $element
@@ -106,4 +106,9 @@
       }
     });
   };
+
+  $(function () {
+    // Auto initialization
+    $('.' + formyeahStr).formyeah();
+  });
 }(jQuery));

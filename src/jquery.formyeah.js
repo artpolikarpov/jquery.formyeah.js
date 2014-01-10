@@ -16,7 +16,7 @@
 
   function decodeInputSelector (key, pageIdentifier) {
     var matched = key.match(formyeahExp);
-    return matched && matched[1] === (pageIdentifier || undefined) && matched[2];
+    return matched && matched[1] === (pageIdentifier + '' || undefined) && matched[2];
   }
 
   function isRadioOrCheckbox ($field) {
@@ -32,17 +32,16 @@
 
   $.fn.formyeah = function () {
     var action = arguments[0],
-        options = $.extend({
-          emptyStorageOnSubmitAndReset: true,
+        _options = $.extend({
           pageIdentifier: [location.pathname, location.search, location.hash].join('')
         }, arguments[1] || typeof action === 'object' && action);
 
     return this.each(function () {
-      var $parent = $(this);
-
-      var fieldSelector = ':input[id]:not([data-recover="false"]):not([type="password"])',
+      var $parent = $(this),
+          fieldSelector = ':input[id]:not([data-recover="false"]):not([type="password"])',
           $fields = $(fieldSelector, $parent),
-          parentData = $parent.data();
+          parentData = $parent.data(),
+          options = $.extend({}, _options, parentData);
 
         if (action === 'emptyStorage') {
           // Empty storage for fields in the selected $element
@@ -59,7 +58,11 @@
 
         // Restore saved values
         $.each(localStorage, function (key, value) {
+          console.log('restore', key, value);
+
           var $field = $(decodeInputSelector(key, options.pageIdentifier)).filter(fieldSelector);
+
+          console.log('$field selector', decodeInputSelector(key, options.pageIdentifier));
 
           if (!$field.length) {
             return;
@@ -97,17 +100,21 @@
         items.push({$field: $field, value: value});
 
         $.each(items, function (i, object) {
+          console.log('save', encodeInputSelector(object.$field, options.pageIdentifier), object.value);
           localStorage.setItem(encodeInputSelector(object.$field, options.pageIdentifier), object.value);
         });
       });
 
       $fields.change();
 
-      if (options.emptyStorageOnSubmitAndReset) {
-        $parent.on('submit reset', function () {
-          emptyStorage($fields, options.pageIdentifier);
-        });
-      }
+      $parent.on('submit reset', function () {
+        emptyStorage($fields, options.pageIdentifier);
+      });
     });
   };
+
+  $(function () {
+    // Auto initialization
+    $('.' + formyeahStr).formyeah();
+  });
 }(jQuery));
