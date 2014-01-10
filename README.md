@@ -1,6 +1,6 @@
 # jquery.formyeah.js
 
-jQuery plugin for keeping user input. Restores values ​​in fields when page reloads. Uses `window.localStorage` and jQuery.
+jQuery plugin for keeping user input. Restores values ​​in fields when page reloads. Uses `localStorage`.
 
 ## Getting Started
 Download the [production version][min] or the [development version][max].
@@ -56,7 +56,7 @@ If you want your forms be the same on different pages pass the empty identifier 
 
 ## Methods
 ### emptyStorage
-Release form data manually:
+Flush form’s data manually:
 
 ```javascript
 $('#form1, #form2').formyeah('emptyStorage');
