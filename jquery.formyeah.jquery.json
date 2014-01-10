@@ -1,9 +1,9 @@
 {
-  "name": "jquery.formyeah",
-  "title": "jquery.formyeah",
+  "name": "jquery.formyeah.js",
+  "title": "jquery.formyeah.js",
   "description": "jQuery plugin for keeping user input. Restores values ​​in fields when page reloads. Uses `localStorage`.",
   "version": "0.2.0",
-  "homepage": "https://github.com/artpolikarpov/jquery.formyeah",
+  "homepage": "https://github.com/artpolikarpov/jquery.formyeah.js",
   "author": {
     "name": "Artem Polikarpov",
     "email": "artpolikarpov@gmail.com",
@@ -11,13 +11,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/artpolikarpov/jquery.formyeah.git"
+    "url": "git://github.com/artpolikarpov/jquery.formyeah.js.git"
   },
-  "bugs": "https://github.com/artpolikarpov/jquery.formyeah/issues",
+  "bugs": "https://github.com/artpolikarpov/jquery.formyeah.js/issues",
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/artpolikarpov/jquery.formyeah/blob/master/LICENSE-MIT"
+      "url": "https://github.com/artpolikarpov/jquery.formyeah.js/blob/master/LICENSE-MIT"
     }
   ],
   "dependencies": {
