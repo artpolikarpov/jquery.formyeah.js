@@ -58,11 +58,7 @@
 
         // Restore saved values
         $.each(localStorage, function (key, value) {
-          console.log('restore', key, value);
-
           var $field = $(decodeInputSelector(key, options.pageIdentifier)).filter(fieldSelector);
-
-          console.log('$field selector', decodeInputSelector(key, options.pageIdentifier));
 
           if (!$field.length) {
             return;
@@ -100,7 +96,6 @@
         items.push({$field: $field, value: value});
 
         $.each(items, function (i, object) {
-          console.log('save', encodeInputSelector(object.$field, options.pageIdentifier), object.value);
           localStorage.setItem(encodeInputSelector(object.$field, options.pageIdentifier), object.value);
         });
       });

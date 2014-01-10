@@ -1,4 +1,4 @@
-/*! jquery.formyeah - v0.1.0 - 2014-01-11
+/*! jquery.formyeah - v0.2.0 - 2014-01-11
 * https://github.com/artpolikarpov/jquery.formyeah
 * Copyright (c) 2014 Artem Polikarpov; Licensed MIT */
 (function ($, undefined) {
@@ -12,7 +12,7 @@
 
   function decodeInputSelector (key, pageIdentifier) {
     var matched = key.match(formyeahExp);
-    return matched && matched[1] === (pageIdentifier || undefined) && matched[2];
+    return matched && matched[1] === (pageIdentifier + '' || undefined) && matched[2];
   }
 
   function isRadioOrCheckbox ($field) {
@@ -29,7 +29,6 @@
   $.fn.formyeah = function () {
     var action = arguments[0],
         _options = $.extend({
-          emptyStorageOnSubmitAndReset: true,
           pageIdentifier: [location.pathname, location.search, location.hash].join('')
         }, arguments[1] || typeof action === 'object' && action);
 
@@ -99,11 +98,9 @@
 
       $fields.change();
 
-      if (options.emptyStorageOnSubmitAndReset) {
-        $parent.on('submit reset', function () {
-          emptyStorage($fields, options.pageIdentifier);
-        });
-      }
+      $parent.on('submit reset', function () {
+        emptyStorage($fields, options.pageIdentifier);
+      });
     });
   };
 
