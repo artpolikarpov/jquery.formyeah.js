@@ -31,6 +31,8 @@ Every input, textarea, or select should have an `id`.
 
 Passwords fields won’t be stored as well as fields with the `data-recover="false"` attribute.
 
+## [Simple demo →](http://artpolikarpov.github.io/jquery.formyeah.js/test/jquery.formyeah.html)
+
 ## Options
 ### emptyStorageOnSubmitAndReset
 By default data will be released on the form submission/reset. Change this with `emptyStorageOnSubmitAndReset:false`:
